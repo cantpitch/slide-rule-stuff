@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pickett 800-T Cheat Sheet</title>
+<style>
+  @page { size: letter portrait; margin: 0.35in; }
+  :root { --ink:#111; --muted:#555; --rule:#999; --hi:#8a1c1c; --band:#ececec; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 7.9pt; line-height: 1.28; color: var(--ink); background:#fff; }
+  .page { width: 7.8in; height: 10.3in; overflow: hidden; page-break-after: always; display:flex; flex-direction:column; }
+  .page:last-child { page-break-after: auto; }
+  header { display:flex; justify-content:space-between; align-items:baseline; border-bottom: 2px solid var(--ink); padding-bottom: 3px; margin-bottom: 6px; }
+  header h1 { font-size: 14pt; margin:0; letter-spacing: .02em; }
+  header .side { font-size: 8.5pt; color: var(--muted); font-weight:600; }
+  .cols { column-count: 2; column-gap: 0.22in; column-fill: auto; height: 9.62in; }
+  section { break-inside: avoid; margin: 0 0 7px; }
+  h2 { font-size: 9pt; margin: 0 0 3px; padding: 1.5px 5px; background: var(--ink); color:#fff; letter-spacing:.03em; }
+  h3 { font-size: 8pt; margin: 4px 0 1px; color: var(--hi); }
+  p { margin: 0 0 3px; }
+  ol, ul { margin: 0 0 3px; padding-left: 14px; }
+  li { margin: 0 0 1px; }
+  table { border-collapse: collapse; width:100%; margin: 1px 0 3px; }
+  th, td { border-bottom: 0.5px solid var(--rule); padding: 1.2px 3px; text-align:left; vertical-align: top; }
+  th { background: var(--band); font-size: 7.5pt; }
+  td.s, th.s { font-weight:700; white-space:nowrap; }
+  .ex { background: var(--band); padding: 2px 5px; margin: 2px 0 3px; border-left: 2.5px solid var(--hi); }
+  .ex b { color: var(--hi); }
+  .note { color: var(--muted); font-size: 7.3pt; }
+  .k { font-family: "Menlo", "Courier New", monospace; font-size: 7.4pt; }
+  .tip { border: 1px solid var(--ink); padding: 3px 5px; margin: 2px 0 3px; }
+  footer { border-top: 1px solid var(--rule); padding-top: 2px; font-size: 6.8pt; color: var(--muted); display:flex; justify-content:space-between; }
+  sup { font-size: 70%; line-height: 0; }
+</style>
+</head>
+<body>
+
+<!-- ======================= SIDE 1 ======================= -->
+<div class="page">
+<header>
+  <h1>Pickett 800-T Log Log — Cheat Sheet</h1>
+  <span class="side">SIDE 1 · Scales · × ÷ · Powers &amp; Roots</span>
+</header>
+<div class="cols">
+
+<section>
+<h2>THE SCALES</h2>
+<table>
+<tr><th class="s">Scale</th><th>Shows</th><th>Range</th><th>Read with</th></tr>
+<tr><td class="s">C / D</td><td>x — the basic log scales</td><td>1 – 10</td><td>each other</td></tr>
+<tr><td class="s">CI / DI</td><td>1/x (inverted; read right→left, often red)</td><td>10 – 1</td><td>C / D</td></tr>
+<tr><td class="s">CF / DF</td><td>πx (folded at π)</td><td>π – 10π</td><td>C / D</td></tr>
+<tr><td class="s">CIF</td><td>1/(πx) (inverted folded)</td><td>—</td><td>C / CF</td></tr>
+<tr><td class="s">A / B</td><td>x² (two cycles)</td><td>1 – 100</td><td>D / C</td></tr>
+<tr><td class="s">K</td><td>x³ (three cycles)</td><td>1 – 1000</td><td>D</td></tr>
+<tr><td class="s">S</td><td>sin θ (cos θ on complementary numbers)</td><td>5.74° – 90°</td><td>C (slide)<sup>*</sup></td></tr>
+<tr><td class="s">T</td><td>tan θ</td><td>5.71° – 45°</td><td>C (slide)<sup>*</sup></td></tr>
+<tr><td class="s">ST</td><td>sin ≈ tan ≈ radians, small angles</td><td>0.573° – 5.73°</td><td>C (slide)<sup>*</sup></td></tr>
+<tr><td class="s">LL1</td><td>e<sup>x</sup>, x = 0.01 – 0.1</td><td>1.010 – 1.105</td><td>D</td></tr>
+<tr><td class="s">LL2</td><td>e<sup>x</sup>, x = 0.1 – 1</td><td>1.105 – 2.718</td><td>D</td></tr>
+<tr><td class="s">LL3</td><td>e<sup>x</sup>, x = 1 – 10</td><td>2.718–22,000</td><td>D</td></tr>
+</table>
+<p class="note">* Always read a scale against the C or D scale it sits beside: trig scales on the slide go with C; anything on the body goes with D. If your S/T/ST sit on the body, use D instead of C in the trig steps.</p>
+</section>
+
+<section>
+<h2>READING &amp; THE DECIMAL POINT</h2>
+<ul>
+<li>The rule gives <b>digits only</b>. 2.4, 24, 0.024 all sit at the same spot.</li>
+<li>Check the <b>value of the smallest division</b> in each stretch — it changes (finer between 1–2, coarser at 4–10).</li>
+<li><b>Place the decimal by rough estimate:</b> 38.2 × 0.0517 ≈ 40 × 0.05 = 2 → digits 1975 → <b>1.975</b>.</li>
+<li>Or use powers of ten: write each number as d.ddd × 10<sup>n</sup>; add exponents for ×, subtract for ÷; adjust by 1 if the slide went "off the right end."</li>
+<li><b>Index</b> = the 1 at either end of C (left index or right index).</li>
+</ul>
+</section>
+
+<section>
+<h2>MULTIPLICATION  a × b</h2>
+<ol>
+<li>Set the C index over <b>a</b> on D.</li>
+<li>Move the hairline to <b>b</b> on C.</li>
+<li>Read the answer on D under the hairline.</li>
+</ol>
+<p><b>Off the end?</b> Use the other C index (right index instead of left), or work on <b>CF/DF</b>: same steps using the CF index — it's near the middle, so the answer almost never falls off.</p>
+<div class="ex"><b>Ex:</b> 2.4 × 3.5 → left C index on 2.4 (D), hairline to 3.5 (C), read <b>8.4</b> on D.<br>
+<b>Ex:</b> 6 × 7 → off the right with the left index; use the right C index on 6, hairline to 7 → 42 → <b>42</b>.</div>
+<h3>Three factors a × b × c (one setting)</h3>
+<p>Set <b>b on CI</b> over <b>a on D</b>; move hairline to <b>c on C</b>; read D.</p>
+</section>
+
+<section>
+<h2>DIVISION  a ÷ b</h2>
+<ol>
+<li>Put the hairline on <b>a</b> on D.</li>
+<li>Slide <b>b</b> on C under the hairline.</li>
+<li>Read the answer on D under the C index.</li>
+</ol>
+<div class="ex"><b>Ex:</b> 8.4 ÷ 3.5 → 3.5 (C) over 8.4 (D); under C index read <b>2.4</b>.</div>
+<h3>Chained (a × b) ÷ c</h3>
+<p>Divide first: <b>c on C over a on D</b>; hairline to <b>b on C</b>; read D. Keep alternating ÷, × — each step only moves the hairline or the slide.</p>
+<h3>Proportion  a / b = c / x</h3>
+<p>Set <b>a on C over b on D</b>. Now every C/D pair has the same ratio: find <b>c</b> on C, read <b>x</b> on D under it (or the reverse). Great for unit conversion and percentages.</p>
+</section>
+
+<section>
+<h2>RECIPROCALS &amp; π</h2>
+<table>
+<tr><th>Want</th><th>Do</th></tr>
+<tr><td>1/x</td><td>Hairline on x on C → read CI (or x on D → read DI)</td></tr>
+<tr><td>πx</td><td>Hairline on x on D → read DF (C → CF)</td></tr>
+<tr><td>x/π</td><td>Hairline on x on DF → read D</td></tr>
+<tr><td>1/(πx)</td><td>Hairline on x on C → read CIF</td></tr>
+<tr><td>a ÷ b via CI</td><td>C index over a on D, hairline to b on <b>CI</b>, read D (÷ becomes ×)</td></tr>
+<tr><td>Circumference</td><td>Diameter on D → read πd on DF</td></tr>
+</table>
+</section>
+
+<section>
+<h2>SQUARES &amp; SQUARE ROOTS  (A, B)</h2>
+<p><b>x²:</b> hairline on x on D → read A.  (Slide: C → B.)</p>
+<p><b>√x:</b> hairline on x on A → read D. Pick the correct <b>half</b> of A:</p>
+<ul>
+<li>Mark off digits in <b>pairs from the decimal point</b> (both directions).</li>
+<li>Leftmost non-zero group has <b>1 digit → left half</b> (1–10); <b>2 digits → right half</b> (10–100).</li>
+<li>Result has one digit before the point per group left of the point.</li>
+</ul>
+<div class="ex"><b>Ex:</b> √250 → "2 50" → leading group 1 digit → left half, 2.5 → D: 1581 → <b>15.81</b>.<br>
+<b>Ex:</b> √2500 → "25 00" → right half, 25 → D: <b>50.0</b>.<br>
+<b>Ex:</b> √0.0036 → "0.00 36" → right half 36 → 6 → <b>0.06</b>.</div>
+<p><b>Area of circle:</b> d on D → d² on A, then × 0.7854 (= π/4).</p>
+<p><b>1/x²:</b> x on CI → read B.</p>
+</section>
+
+<section>
+<h2>CUBES &amp; CUBE ROOTS  (K)</h2>
+<p><b>x³:</b> hairline on x on D → read K.</p>
+<p><b>∛x:</b> hairline on x on K → read D. Group digits in <b>threes from the decimal point</b>; leading group of 1, 2, or 3 digits → left, middle, or right third of K.</p>
+<div class="ex"><b>Ex:</b> ∛50 → "50" (2 digits) → middle third, 50 → D: <b>3.684</b>.<br>
+<b>Ex:</b> ∛5000 → "5 000" → left third, 5 → D: 1710 → <b>17.10</b>.</div>
+<p><b>x<sup>3/2</sup></b>: x on A → read K.  <b>x<sup>2/3</sup></b>: x on K → read A.</p>
+</section>
+
+<section>
+<h2>HANDY CONSTANTS</h2>
+<table>
+<tr><td>π = 3.1416</td><td>e = 2.7183</td><td>π/4 = 0.7854</td></tr>
+<tr><td>ln 10 = 2.3026</td><td>log<sub>10</sub>e = 0.4343</td><td>√2 = 1.4142</td></tr>
+<tr><td>1 rad = 57.296°</td><td>1° = 0.017453 rad</td><td>√3 = 1.7321</td></tr>
+<tr><td>g = 9.807 m/s² = 32.17 ft/s²</td><td>1 in = 2.54 cm</td><td>1 lb = 0.4536 kg</td></tr>
+</table>
+</section>
+
+</div>
+<footer><span>Pickett Model 800-T · Scales A B C D K CI DI CF DF CIF S T ST LL1 LL2 LL3</span><span>Side 1 of 2 — trig &amp; log-log on reverse →</span></footer>
+</div>
+
+<!-- ======================= SIDE 2 ======================= -->
+<div class="page">
+<header>
+  <h1>Pickett 800-T Log Log — Cheat Sheet</h1>
+  <span class="side">SIDE 2 · Trigonometry · Log Log (LL1–LL3)</span>
+</header>
+<div class="cols">
+
+<section>
+<h2>SINE, COSINE, TANGENT</h2>
+<table>
+<tr><th>Want</th><th>Set</th><th>Read</th><th>Value range</th></tr>
+<tr><td>sin θ, 5.74°–90°</td><td>θ on S</td><td>C</td><td>0.1 – 1.0</td></tr>
+<tr><td>sin θ, 0.573°–5.73°</td><td>θ on ST</td><td>C</td><td>0.01 – 0.1</td></tr>
+<tr><td>cos θ</td><td>(90° − θ) on S <span class="note">(or red cos numbers)</span></td><td>C</td><td>= sin(90°−θ)</td></tr>
+<tr><td>tan θ, 5.71°–45°</td><td>θ on T</td><td>C</td><td>0.1 – 1.0</td></tr>
+<tr><td>tan θ, 45°–84.3°</td><td>(90° − θ) on T</td><td><b>CI</b></td><td>1.0 – 10</td></tr>
+<tr><td>tan θ, 84.3°–89.4°</td><td>(90° − θ) on ST</td><td><b>CI</b></td><td>10 – 100</td></tr>
+<tr><td>cot θ</td><td>θ on T</td><td><b>CI</b></td><td>= 1/tan θ</td></tr>
+<tr><td>csc θ, sec θ</td><td>θ on S (sec: 90°−θ)</td><td><b>CI</b></td><td>1/sin, 1/cos</td></tr>
+<tr><td>θ from value</td><td>value on C</td><td>S / T / ST</td><td>reverse lookup</td></tr>
+</table>
+<p class="note">Angles &lt; 0.573°: sin θ ≈ tan θ ≈ θ (radians) = θ° × 0.017453.  For angles &gt; 90°, reduce first: sin(180°−θ) = sin θ, cos(180°−θ) = −cos θ, etc.</p>
+<div class="ex"><b>Ex:</b> sin 30° → 30 on S → <b>0.500</b> on C.  tan 20° → 20 on T → <b>0.364</b>.<br>
+<b>Ex:</b> tan 70° → 20 on T → read CI: <b>2.747</b>.  sin 2° → 2 on ST → <b>0.0349</b>.</div>
+</section>
+
+<section>
+<h2>DEGREES ↔ RADIANS</h2>
+<p><b>Small angles:</b> θ° on ST → radians on C (0.01–0.1). 1° → 0.01745.</p>
+<p><b>Any angle:</b> proportion — set <b>57.3 on C over a D index</b> (left or right, whichever keeps your number on the rule). Then degrees on C ↔ radians on D.</p>
+<div class="ex"><b>Ex:</b> 40° → 0.698 rad.   2.5 rad → 143.2°.</div>
+</section>
+
+<section>
+<h2>MULTIPLY / DIVIDE BY A TRIG VALUE</h2>
+<p><b>a × sin θ:</b> C index over a on D; hairline to θ on S; read D.</p>
+<p><b>a ÷ sin θ:</b> hairline on a on D; slide θ (on S) under hairline; read D under C index.</p>
+<p>Same pattern with T and ST. Use the other index if it runs off.</p>
+<div class="ex"><b>Ex:</b> 12 × sin 35° → C index on 12, hairline to 35 on S → <b>6.88</b>.</div>
+</section>
+
+<section>
+<h2>TRIANGLES</h2>
+<h3>Law of sines  a / sin A = b / sin B = c / sin C</h3>
+<ol>
+<li>Set angle <b>A on S</b> over side <b>a on D</b>.</li>
+<li>Hairline to angle <b>B on S</b> → side <b>b on D</b>. (Also works in reverse: find a side on D, read its angle on S.)</li>
+</ol>
+<div class="ex"><b>Ex:</b> a = 10, A = 40°, B = 65° → 40 (S) over 10 (D); hairline to 65 (S) → b = <b>14.10</b>.</div>
+<h3>Right triangle (legs a, b; hypotenuse c)</h3>
+<ul>
+<li><b>Angle:</b> tan θ = a/b (a &lt; b). Set right C index over b on D; hairline to a on D; read θ on T.</li>
+<li><b>Hypotenuse:</b> c = a / sin θ. Leave hairline on a (D); slide θ on S under hairline; read c on D at C index.</li>
+<li>Also handy: polar ↔ rectangular (x = r cos θ, y = r sin θ) — same steps.</li>
+</ul>
+<div class="ex"><b>Ex:</b> legs 3, 4 → tan θ = 0.75 → θ = <b>36.87°</b>; c = 3 / sin 36.87° = <b>5.00</b>.</div>
+</section>
+
+<section>
+<h2>LOG LOG BASICS  (LL scales read on D)</h2>
+<p>Each LL value sits <b>directly over ln(value) on D</b>. The scale tells you where the decimal point of the exponent goes:</p>
+<table>
+<tr><th>Scale</th><th>Values</th><th>x in e<sup>x</sup></th><th>D reading 2.3 means</th></tr>
+<tr><td class="s">LL1</td><td>1.010 – 1.105</td><td>0.01 – 0.1</td><td>e<sup>0.023</sup> = 1.0233</td></tr>
+<tr><td class="s">LL2</td><td>1.105 – 2.718</td><td>0.1 – 1</td><td>e<sup>0.23</sup> = 1.2586</td></tr>
+<tr><td class="s">LL3</td><td>2.718–22,026</td><td>1 – 10</td><td>e<sup>2.3</sup> = 9.974</td></tr>
+</table>
+<div class="tip"><b>Key fact:</b> any LL value raised to the <b>10th power</b> sits on the <b>next scale up at the same hairline</b> (LL1 → LL2 → LL3). Example: 1.06 on LL1 is directly over 1.06<sup>10</sup> = 1.791 on LL2.</div>
+<h3>e<sup>x</sup> and ln x</h3>
+<p><b>e<sup>x</sup>:</b> hairline on x on D → read LL scale chosen by the size of x.</p>
+<p><b>ln y:</b> hairline on y on its LL scale → read D; decimal point from the scale (table above).</p>
+<p><b>log<sub>10</sub> y</b> (no L scale): log<sub>10</sub> y = ln y × 0.4343.  <b>log<sub>b</sub> y</b> = ln y ÷ ln b (two LL lookups + a C/D division).</p>
+<div class="ex"><b>Ex:</b> e<sup>0.035</sup> → 3.5 on D → LL1: <b>1.0356</b>.  e<sup>2.3</sup> → LL3: <b>9.97</b>.  ln 7.5 → 7.5 on LL3 → D 2015 → <b>2.015</b>.</div>
+</section>
+
+<section>
+<h2>POWERS  y<sup>p</sup></h2>
+<ol>
+<li>Set the C index over <b>y</b> on its LL scale.</li>
+<li>Move the hairline to <b>p</b> on C.</li>
+<li>Read y<sup>p</sup> on an LL scale under the hairline:</li>
+</ol>
+<ul>
+<li><b>Left C index used</b> (p read as 1–10) → answer on the <b>same</b> LL scale as y.</li>
+<li><b>Right C index used</b> (because the left went off the end) → answer on the <b>next scale up</b>.</li>
+<li>If p is 10–100 → move one more scale up; if 0.1–1 → one scale down. (Each ×10 in p = one scale.)</li>
+<li>Sanity check: ln(answer) should equal p × ln y — the scale must cover that range.</li>
+</ul>
+<div class="ex"><b>Ex:</b> 3<sup>4.2</sup> → left index on 3 (LL3), hairline 4.2 → LL3: <b>100.9</b>.<br>
+<b>Ex:</b> 1.05<sup>2.5</sup> → left index runs off; right index on 1.05 (LL1), hairline 2.5 → LL2: <b>1.1297</b>.<br>
+<b>Ex:</b> $1000 at 6% for 10 yr → 1.06<sup>10</sup>: hairline on 1.06 (LL1) → straight to LL2: <b>1.791</b> → $1791.</div>
+</section>
+
+<section>
+<h2>ROOTS  <sup>n</sup>√y = y<sup>1/n</sup></h2>
+<ol>
+<li>Hairline on <b>y</b> on its LL scale.</li>
+<li>Slide <b>n</b> on C under the hairline.</li>
+<li>Read the root on LL under the C index (left index → same scale; right index → <b>one scale down</b>).</li>
+</ol>
+<div class="ex"><b>Ex:</b> ∛50 → hairline 50 (LL3), slide 3 on C under it → under left index, LL3: <b>3.684</b>.<br>
+<b>Ex:</b> <sup>5</sup>√2 → hairline 2 (LL2), slide 5 under it → under left index, LL2: <b>1.1487</b>.<br><b>Ex:</b> ∛1.2 → left index runs off; read under right index, one scale down (LL1): <b>1.0627</b>.</div>
+<p><b>Solve for an exponent</b> (y<sup>p</sup> = z): p = ln z ÷ ln y — read both on D, divide on C/D.</p>
+</section>
+
+<section>
+<h2>VALUES BELOW 1 &amp; NEGATIVE EXPONENTS</h2>
+<p>This rule has no LL0/LL00 scales, so use reciprocals:</p>
+<ul>
+<li><b>e<sup>−x</sup></b> = 1 / e<sup>x</sup>: find e<sup>x</sup> on LL, then 1/that via C → CI.</li>
+<li><b>y<sup>−p</sup></b> = 1 / y<sup>p</sup>.   <b>(0.5)<sup>p</sup></b> = 1 / 2<sup>p</sup>.</li>
+<li><b>ln y for y &lt; 1:</b> ln y = −ln(1/y).</li>
+</ul>
+<div class="ex"><b>Ex:</b> e<sup>−0.7</sup> → e<sup>0.7</sup> = 2.014 (LL2) → 1/2.014 = <b>0.497</b>.</div>
+</section>
+
+</div>
+<footer><span>Tip: estimate first, then let the rule supply the digits. Typical accuracy ≈ 3 significant figures.</span><span>Side 2 of 2</span></footer>
+</div>
+
+</body>
+</html>
